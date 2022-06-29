@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="static/register/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="static/register/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form" onSubmit = "return checkPassword(this)">
+                        <h2 class="form-title">Create account</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-input" name="phone" id="phone" placeholder="Your Number"/>
+                        </div><br>
+                        <div class="form-group">
+                            <input type="radio" id="male" name="fav_language" value="M">
+                            <label for="male" class="form-input">Male</label>
+                            <input type="radio" id="female"  name="fav_language" value="F">
+                            <label for="female" class="form-input">Female</label><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday" class="form-input">Birthday:</label>
+                            <input type="date" id="birthday"  name="birthday" class="form-input"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="City" id="City" placeholder="Your City"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-input" name="pin" id="pin" placeholder="Area Pin"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="state" id="state" placeholder="Your state"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="qual" class="form-input">Choose your qualification:</label>
+                            <select name="qual" id="qual" class="form-input">
+                              <option value="MTech" class="form-input">MTECH</option>
+                              <option value="BTech" class="form-input">BTech</option>
+                              <option value="MCA" class="form-input">MCA</option>
+                              <option value="Medical" class="form-input">Medical</option>
+                                <option value="Commerce" class="form-input">Commerce</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="prof" id="prof" placeholder="Your profession"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" onblur="validateEmail(this.value)"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href=emp_log class="loginhere-link">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="static/register/vendor/jquery/jquery.min.js"></script>
+    <script src="static/register/js/main.js"></script>
+    <script>
+        function validateEmail(sEmail) {
+  var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+
+  if(!sEmail.match(reEmail)) {
+    alert("Invalid email address");
+    return false;
+  }
+
+  return true;
+
+}
+    </script>
+
+ <script>
+
+            // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword(form) {
+                var password1,password2;
+                password1 = form.password.value;
+                password2 = form.re_password.value;
+
+                // If password not entered
+                if (password1 === '')
+                    alert ("Please enter Password");
+
+                // If confirm password not entered
+                else if (password2 === '')
+                    alert ("Please enter confirm password");
+
+                // If Not same return False.
+                else if (password1 !== password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+
+                // If same return True.
+                else{
+                    return true;
+                }
+            }
+        </script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

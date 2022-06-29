@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Update Password</title>
+        <meta charset="UTF-8">
+        <style>
+            .div1{
+                margin: 0;
+                position: absolute;
+                top: 30%;
+                left: 43%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+        </style>
+    </head>
+<body>
+<div class="div1">
+    <form action=" {{ url_for("res_pass")}} " method="post">
+    <input type="text" id="m_id" name="m_id" placeholder="Enter Email id:"><br><br>
+    <input type="text" id="pass_wd" name="pass_wd" placeholder="Enter new password:"><br>
+    <br><center><input type="submit" id="sub1" value="Update" name="submit"></center>
+    </form>
+</div>
+</body>
+</html>

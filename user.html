@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>dashboard</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="https://kit.fontawesome.com/7adb5a254d.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class="fa-solid fa-shekel-sign"></i>
+                <div class="logo_name">Attrition</div>
+            </div>
+            <i class="fa-solid fa-bars" id="btn"></i>
+        </div>
+        <ul class="navlist">
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </a>
+                <!-- <span class="tooltip">Search</span> -->
+            </li>
+            <li>
+                <a href=emphome>
+                    <i class="fa-solid fa-grid-4"></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <!-- <span class="tooltip">Search</span> --> 
+            </li>
+            <li>
+                <a href=profile>
+                    <i class="fa-solid fa-user"></i>
+                    <span class="links_name" style="color: red;">User Profile</span>
+                </a>
+                <!-- <span class="tooltip">Search</span> --> 
+            </li>
+            <li>
+                <a href=questionnaire>
+                    <i class="fa-solid fa-pencil"></i>
+                    <span class="links_name">Questionnaire</span>
+                </a>
+                <!-- <span class="tooltip">Search</span> -->
+            </li>
+            <li>
+                <a href="notifications2">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="links_name">Notifications</span>
+                </a>
+              <!-- <span class="tooltip">Search</span> --> 
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="https://cdn.vectorstock.com/i/preview-1x/04/09/user-icon-vector-5770409.webp" alt="Image"> 
+                    <div class="name_job">
+                        <div class="name">{{data[email]}}</div>
+                        <div class="job">Software Developer</div>
+                    </div>
+                </div>
+                <a href=first_page ><i class="fa-solid fa-arrow-right-from-bracket" id="log_out"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="home_contact">
+        <div class="text">
+            <form id="form1" name="form1" method="post" action="" style="padding: 70px 70px;">
+        <table width="500" border="1" align="center" class="table table-hover">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Phone</td>
+                <td>Qualification</td>
+                 <td>Profession</td>
+                <td>Birthday</td>
+                <td>State</td>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i['id']}}</td>
+                <td>{{i['name']}}</td>
+                <td>{{i['email']}}</td>
+                <td>{{i['phone']}}</td>
+                <td>{{i['qualification']}}</td>
+                <td>{{i['profession']}}</td>
+                <td>{{i['birthday']}}</td>
+                <td>{{i['state']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>
